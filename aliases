@@ -1,0 +1,29 @@
+# Get External IP / local IPs
+alias ip="curl ipinfo.io/ip"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+
+# Quickly serve the current directory as HTTP
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+# Add whitespace to dock
+alias add_whitespace="defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock"
+
+# Create a wip
+alias wip_commit="git add -A && git commit -m 'wip'"
+
+alias ngrok="~/ngrok"
+
+alias hrc='heroku run rails c'
+
+alias undo_commit='git reset HEAD~ --soft && git reset HEAD'
+
+alias hgo='cd ~/code/higo/higo-api'
+
+alias hc='cd ~/code/higo/higo-api/ && heroku run rails c --app higo-api'
+
+# Run the graphql schema generator (only works for higo-api)
+alias run_gastown_public_schema_tests='bundle exec spring rspec --color spec/graphql/gastown_public/schema_spec.rb'
+alias run_gastown_schema_tests='bundle exec spring rspec --color spec/graphql/gastown/schema_spec.rb'
+alias mst='bundle exec spring rspec --color spec/graphql/medellin/schema_spec.rb'
+alias pmst='bundle exec spring rspec --color spec/graphql/medellin_public/schema_spec.rb'
