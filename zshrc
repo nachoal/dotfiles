@@ -1,10 +1,11 @@
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one:
-#   https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+# https://github.com/robbyrussell/oh-my-zsh/wiki/themes
+
 ZSH_THEME="shades-of-purple"
 
-# Useful oh-my-zsh plugins for Le Wagon bootcamps
+# Useful oh-my-zsh plugins
 plugins=(git gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting history-substring-search zsh-autosuggestions)
 
 # Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Analytics.md
@@ -22,8 +23,11 @@ eval "$(rbenv init -)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Anaconda binaries (python, pip, conda, jupyter, pytest, pylint etc.)
-export PATH="/anaconda3/bin:${HOME}/anaconda3/bin:${PATH}"
+# export PATH="/anaconda3/bin:${HOME}/anaconda3/bin:${PATH}"
 
 # Rails and Ruby uses the local `bin` folder to store binstubs.
 # So instead of running `bin/rails` like the doc says, just run `rails`
@@ -36,11 +40,9 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 # Encoding stuff for the terminal
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# Open bundler code on VSCODE
 export BUNDLER_EDITOR="code"
-
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # For compilers to find readline you may need to set:
 export LDFLAGS="-L/usr/local/opt/readline/lib"
